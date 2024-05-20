@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'login_page.dart';
-import 'info_pages.dart';
+import 'little.dart';
+import 'burger.dart';
+import 'escondida.dart';
+import 'italian.dart';
+import 'localizacion.dart';
 
 class HomePage extends StatelessWidget {
   final String username;
@@ -22,7 +26,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('PROMOS CU'),
-        centerTitle: true,  // Centra el título en la AppBar
+        centerTitle: true,
         actions: [
           IconButton(
             icon: Icon(Icons.logout),
@@ -40,61 +44,74 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  '¡Bienvenido $username!',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => InfoPage(title: 'Little Caesars')),
-                    );
-                  },
-                  child: Text('Little Caesars'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => InfoPage(title: 'Burger King')),
-                    );
-                  },
-                  child: Text('Burger King'),
-                ),
-				ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => InfoPage(title: 'Escondida')),
-                    );
-                  },
-                  child: Text('Escondida'),
-                ),
-					ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => InfoPage(title: 'The Italian coffee')),
-                    );
-                  },
-                  child: Text('The Italian coffee'),
-                ),
-
-
-                // Agrega más botones para navegar a otras páginas de información adicional si es necesario
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () => _logout(context),
-                  child: Text('Cerrar Sesión'),
-                ),
-              ],
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    '¡Bienvenido $username!',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LittlePage()),
+                      );
+                    },
+                    child: Text('Little Caesars'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BurgerPage()),
+                      );
+                    },
+                    child: Text('Burger King'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => EscondidaPage()),
+                      );
+                    },
+                    child: Text('Escondida'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ItalianPage()),
+                      );
+                    },
+                    child: Text('The Italian Coffee'),
+                  ),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () => _logout(context),
+                    child: Text('Cerrar Sesión'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 20,
+            right: 20,
+            child: FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LocalizacionPage()),
+                );
+              },
+              child: Icon(Icons.location_on),
             ),
           ),
         ],
