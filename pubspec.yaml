@@ -15,6 +15,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   shared_preferences: ^2.0.6
+  carousel_slider: ^4.0.0
 
 flutter:
   assets:
@@ -23,5 +24,25 @@ flutter:
     - assets/images/1345681.png
     - assets/images/1350379.png
     - assets/images/1350383.png
-
+    - assets/images/burger.jpg
+    - assets/images/escondida.jpg
+    - assets/images/italian.jpg
+    - assets/images/little.jpg
+    - assets/images/burger1.jpg
+    - assets/images/1345681.png
+    - assets/images/burger2.png
+    - assets/images/burger3.jpeg
+    - assets/images/burger4.jpg
+    - assets/images/escondida1.jpeg
+    - assets/images/escondida2.jpeg
+    - assets/images/escondida3.jpeg
+    - assets/images/escondida4.jpeg
+    - assets/images/italian1.jpeg
+    - assets/images/italian2.jpeg
+    - assets/images/italian3.jpeg
+    - assets/images/italian4.jpeg
+    - assets/images/little1.jpeg
+    - assets/images/little2.jpg
+    - assets/images/little3.jpeg
+    - assets/images/little4.jpeg
 
